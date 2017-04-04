@@ -1,9 +1,10 @@
 const testReducer = (state={responses:[]}, action) => {
   switch(action.type) {
     case "UPDATE_RESPONSE": {
-      console.log('reducing for ', action.payload);
-      const cloned = state.responses.map((item) => {return {id: item.id, answer: item.answer}});
-      const newResponse = {id: action.payload.id, answer: action.payload.answer};
+      console.log('reducing:', action.type, action.payload);
+      const newResponse = Object.assign({}, action.payload);
+      // replace existing response
+      const cloned = state.responses.filter((item) => item.id !== newResponse.id);
       cloned.push(newResponse);
       return {
         responses: cloned

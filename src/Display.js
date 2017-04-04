@@ -1,16 +1,19 @@
 import React from 'react';
+import './Display.css';
 
+// This:
+// ...is a "dumb" component
+// ...is a "presentational" component
+// ...is aided by the DisplayContainer component
 const Display = ({ responses, hello }) => {
-  // componentWillReceiveProps(p1, p2) {
-  //   console.log(p1, p2
-
-  // },
   return (
-    <div id='display-something'>
-      show responses: {JSON.stringify(responses)} {responses.length}
-      <div> {hello === undefined ? 'no-hello': 'Hello! ' + hello} </div>
-      Responses: {responses ? 'exists' : 'is null sadface'}
-      {responses.map(item => <div key={item.id + Date.now()}>{item.id} = {item.answer.toString()}</div>)}
+    <div 
+      className='response-box'>
+
+      <h5>Responses:</h5>
+      {responses.map(item => 
+          <div key={item.id}>{item.id} = {item.answer.toString()}</div>
+      )}
     </div>
   );
 }

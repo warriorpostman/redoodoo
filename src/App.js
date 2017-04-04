@@ -6,18 +6,16 @@ import DisplayContainer from './DisplayContainer';
 
 class App extends Component {
   render() {
-    console.log('props: ', this.props);
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <div>{this.props.children}</div>
         <div>
-          Hello
+          Here are some checkboxes:
           <TestContainer />
-          <DisplayContainer hello='some text'/>
+          <DisplayContainer />
         </div>
       </div>
     );
