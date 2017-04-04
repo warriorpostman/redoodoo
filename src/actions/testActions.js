@@ -1,21 +1,9 @@
-export function fetchResponses(testId) {
+export function updateResponses(id, answer) {
   return {
-    type: 'FETCH_RESPONSES_DONE',
+    type: 'UPDATE_RESPONSE',
     payload: {
-      responses: [
-        {index: 10, response: true},
-        {index: 80, response: true},
-      ]
-    }
-  }
-}
-
-export function updateResponses(testId, index, answer ) {
-  return {
-    type: 'UPDATE_RESPONSE_DONE',
-    payload: {
-      index: index,
-      response: answer
+      id,
+      answer
     }
   }
 }
