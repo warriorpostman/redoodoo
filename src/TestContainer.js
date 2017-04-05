@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateResponses } from './actions/testActions';
+import { updateResponses, updateServer } from './actions/testActions';
 
 // THIS IS:
 // * A "smart" component
@@ -9,6 +9,7 @@ let TestContainer = ({ dispatch }) => {
   let handler = function(e) {
     console.log('triggering action:', e.target.id, e.target.checked)
     dispatch(updateResponses(e.target.id, e.target.checked))
+    dispatch(updateServer(e.target.id, e.target.checked))
   };
 
   return (
